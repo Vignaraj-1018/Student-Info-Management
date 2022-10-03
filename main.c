@@ -3,7 +3,6 @@
 #include <string.h>
 #include <stdlib.h>
 #include <stdbool.h>
-
 #include "hash-table.c"
 #include "heap.c"
 
@@ -18,13 +17,9 @@ int admin_login()
 {
     char user[16];
     char pass[16];
-
-
     printf("\nEnter Your Username: ");
     fflush(stdin);
     gets(user);
-    
-
     if(!strcmp("Admin",user))
     {
         printf("\nEnter your Password: ");
@@ -48,7 +43,6 @@ int admin_login()
         return 0;
     }
 }
-
 void admin()
 {
     struct Student* ptr;
@@ -74,7 +68,7 @@ void admin()
                 ptr=search_heap(num);
                 if(ptr==NULL)
                 {
-                    printf("\nRoll Not Found ");
+                    printf("\nRoll Number Not Found ");
                     break;
                 }
                 display_student_personal(ptr);
@@ -122,8 +116,6 @@ void admin()
         clr_scr();
     }
 }
-
-
 void update_personal(struct Student* ptr)
 {
     int n;
@@ -136,52 +128,51 @@ void update_personal(struct Student* ptr)
 
         switch (n)
         {
-        case 1:
-            printf("\nOld Name: %s",ptr->name);
-            printf("\nNew Name: ");
-            fflush(stdin);
-            gets(ptr->name);
-            break;
-        
-        case 2:
-            printf("\nDOB: %d/%d/%d",ptr->pers.d_day,ptr->pers.d_month,ptr->pers.d_year);
-            printf("\nNew DOB: ");
-            get_date(ptr);
-            // ptr->pers->d_day=d.day;
-            // ptr->pers->d_month=d.month;
-            // ptr->pers->d_year=d.year;
-            break;
+            case 1:
+                printf("\nOld Name: %s",ptr->name);
+                printf("\nNew Name: ");
+                fflush(stdin);
+                gets(ptr->name);
+                break;
 
-        case 3:
-            printf("\nArea: %s",ptr->pers.area);
-            printf("\nNew Area: ");
-            fflush(stdin);
-            gets(ptr->pers.area);
-            break;
-        
-        case 4:
-            printf("\nCity: %s",ptr->pers.city);
-            printf("\nNew City: ");
-            fflush(stdin);
-            gets(ptr->pers.city);
-            break;
+            case 2:
+                printf("\nDOB: %d/%d/%d",ptr->pers.d_day,ptr->pers.d_month,ptr->pers.d_year);
+                printf("\nNew DOB: ");
+                get_date(ptr);
+                // ptr->pers->d_day=d.day;
+                // ptr->pers->d_month=d.month;
+                // ptr->pers->d_year=d.year;
+                break;
 
-        case 5:
-            printf("\nPincode: %d",ptr->pers.pincode);
-            printf("\nNew Pincode: ");
-            scanf("%d",&ptr->pers.pincode);
-            break;
+            case 3:
+                printf("\nArea: %s",ptr->pers.area);
+                printf("\nNew Area: ");
+                fflush(stdin);
+                gets(ptr->pers.area);
+                break;
 
-        case 0:
-            return;
-        default:
-            break;
+            case 4:
+                printf("\nCity: %s",ptr->pers.city);
+                printf("\nNew City: ");
+                fflush(stdin);
+                gets(ptr->pers.city);
+                break;
+
+            case 5:
+                printf("\nPincode: %d",ptr->pers.pincode);
+                printf("\nNew Pincode: ");
+                scanf("%d",&ptr->pers.pincode);
+                break;
+
+            case 0:
+                return;
+            default:
+                break;
         }
         printf("\n\n\n");
         system("pause");
     }
 }
-
 void student()
 {
     struct Student* cur;
@@ -259,7 +250,6 @@ void main()
             case 0:
                 writeinfile_hash();
                 writeinfile_heap();
-                // printArray(size);
                 return;    
             default:
                 break;
@@ -267,5 +257,4 @@ void main()
         printf("\n\n\n");
         system("pause");
     }
-    
 }
