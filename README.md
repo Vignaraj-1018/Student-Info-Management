@@ -8,7 +8,7 @@ The system allows two types of users: admin and student. The admin can create ne
 
 ## Installation
 
-1. Clone the repository to your local machine using the following command: `git clone https://github.com/your_username/project-name.git`
+1. Clone the repository to your local machine using the following command: `git clone https://github.com/Vignaraj-1018/Student-Info-Management.git`
 2. Navigate to the project directory.
 3. Compile the program using the following command: `gcc main.c -o main`
 4. Run the compiled program using the following command: `./main`
